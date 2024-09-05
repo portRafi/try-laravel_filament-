@@ -33,7 +33,9 @@ class UserResource extends Resource
                     ->email()
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('password'),
+                Forms\Components\TextInput::make('password')
+                ->password()
+                ->revealable(),
                 Forms\Components\Select::make('roles')
                     ->relationship('roles', 'name')
                     ->preload(),
